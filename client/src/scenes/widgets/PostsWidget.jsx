@@ -14,6 +14,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
       headers: { Authorization: `Bearer ${token}` },
     });
     const data = await response.json();
+    console.log('PostWidgets getPosts: ', JSON.stringify(data));
     dispatch(setPosts({ posts: data }));
   };
 
@@ -26,6 +27,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
       }
     );
     const data = await response.json();
+    console.log('PostWidgets getUserPosts: ', JSON.stringify(data));
     dispatch(setPosts({ posts: data }));
   };
 
